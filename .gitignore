@@ -1,0 +1,62 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.bak
+*.old
+*.orig
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.pyo
+*.pyd
+*.env
+.env/
+.venv/
+venv/
+*.egg-info/
+build/
+
+# Java
+*.class
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+target/
+
+
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Other
+*.env
+*.key
+*.pem
+*.crt
+*.pfx

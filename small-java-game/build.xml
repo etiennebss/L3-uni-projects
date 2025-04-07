@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MVCProject" default="dist" basedir=".">
+    
+    <!-- Définition des propriétés -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="doc.dir" value="doc"/>
+    <property name="assets.dir" value="src/view/assets"/>
+
+    <!-- Nettoyer les répertoires de build et de distribution -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <!-- Initialiser les répertoires -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="${doc.dir}"/>
+    </target>
+
+    <!-- Compiler les fichiers Java -->
+    <target name="compile" depends="clean, init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+            <include name="**/*.java"/>
+        </javac>
+    </target>
+
+    <!-- Générer la Javadoc -->
+    <target name="javadoc" depends="compile">
+        <javadoc sourcepath="${src.dir}" destdir="${doc.dir}/javadoc">
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/>
+            </fileset>
+        </javadoc>
+    </target>
+
+    <!-- Copier les assets dans le répertoire dist/view/assets -->
+    <target name="copy-assets" depends="init">
+        <mkdir dir="${dist.dir}/view/assets"/>
+        <copy todir="${dist.dir}/view/assets">
+            <fileset dir="${assets.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Créer le fichier JAR en incluant les assets dans view/assets -->
+    <target name="dist" depends="compile, javadoc, copy-assets">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.dir}/myproject.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="Game"/>
+            </manifest>
+            <!-- Inclure les assets dans le JAR -->
+            <fileset dir="${dist.dir}/view/assets"/>
+        </jar>
+    </target>
+
+    <!-- Exécuter l'application -->
+    <target name="run" depends="compile">
+        <java classname="Game" fork="true">
+            <classpath>
+                <pathelement path="${build.dir}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
