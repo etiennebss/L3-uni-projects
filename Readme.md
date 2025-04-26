@@ -23,7 +23,7 @@ Bienvenue dans ce dépôt qui a pour objectif de centraliser les petits projets 
 
 ### 4. **Projet 4 : Appli de TodoList**
 - **Matière** : Programmation d'appli client - L3 Semestre 1
-- **Langages/Technologies** : React-native
+- **Langages/Technologies** : React, JavaScript
 - **Dossier** : `/todolist-app/`
 
 ---
