@@ -1,6 +1,6 @@
-# Projets Universitaires
+# Projets Universitaires L3 Informatique
 
-Bienvenue dans ce dépôt qui a pour objectif de centraliser les petits projets que nous avions a faire régulièrement durant mes études à l'Université de Caen. Vous trouverez pour chacun de ces projets un ReadMe l'expliquant dans son dossier.
+Bienvenue dans ce dépôt qui a pour objectif de centraliser les petits projets que j'ai réalisé durant ma 3ème année de Licence Informatique à l'Université de Caen
 
 ---
 
@@ -28,4 +28,4 @@ Bienvenue dans ce dépôt qui a pour objectif de centraliser les petits projets 
 
 ---
 
-Merci de votre intérêt pour mes projets universitaires ! N'hésitez pas à me contacter pour toute question ou suggestion.
+Merci de votre intérêt pour mes projets !
